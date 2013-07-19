@@ -13,68 +13,74 @@ come out decent.
 Quick start
 ===========
 
-Install::
+**Install**
 
-    $ pip install tedmund
+    ::
 
-Write slides::
+        $ pip install tedmund
 
-    $ vim mypresentation.py
+**Write slides**
 
-    from temund import *
+    ::
 
+        $ vim mypresentation.py
 
-    title("""
-    Welcome to my slides
-    """)
-
-
-    info("""
-    My slides come in three varieties:
-
-    * title
-    * info
-    * code
-    """)
+        from temund import *
 
 
-    info("""
-    Example.
-    """)
+        title("""
+        Welcome to my slides
+        """)
 
 
-    code("""
-    from tedmund import *
+        info("""
+        My slides come in three varieties:
 
-    title('''
-    Title slide!
-    ''')
-    info('''
-    This is an info slide with bullets!
+        * title
+        * info
+        * code
+        """)
 
-    * bullet 1
-    * bullet 2
-    ''')
-    code('''
-    from tedmund import *
-    ...
-    ''')
-    """)
+
+        info("""
+        Now for an example.
+        """)
+
+
+        code("""
+        from tedmund import *
+
+        title('''
+        Title slide!
+        ''')
+        info('''
+        This is an info slide with bullets!
+
+        * bullet 1
+        * bullet 2
+        ''')
+        code('''
+        from tedmund import *
+        ...
+        ''')
+        """)
 
 
     run_slides()
 
-Present::
+**Present**
 
-    $ python mypresentation.py
+    ::
 
-Use:
+        $ python mypresentation.py
 
-* 'a' for previous slide,
-* 'd' for next slide,
-* and 'q' for quit.
+    Use:
 
-Why those keys? Because I do a lot of WASD games.
+    * 'a' for previous slide,
+    * 'd' for next slide,
+    * and 'q' for quit.
+
+    Why those keys? Because I do a lot of WASD games.
 
 
 Project details
