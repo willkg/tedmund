@@ -1,0 +1,10 @@
+include README.rst
+include LICENSE
+include CHANGELOG
+include CONTRIBUTORS
+include setup.py
+include requirements-dev.txt
+include MANIFEST.in
+
+recursive-include tedmund *.py
+recursive-include docs *.py *.rst Makefile
