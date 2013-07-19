@@ -116,15 +116,27 @@ def getch():
     return ch
 
 
+def print_slide_number(pageno, total):
+    with TERM.location(0, TERM.height - 1):
+        if pageno == 0:
+            print '     BEGINNING'
+        elif pageno + 1 == total:
+            print '     THE END'
+        else:
+            print '     {0:2} / {1:2}'.format(pageno + 1, total)
+
+
 def run_slides():
     print TERM.enter_fullscreen()
 
     pageno = 0
 
     SLIDES[pageno].display()
+    print_slide_number(pageno, len(SLIDES))
 
     while 0 <= pageno < len(SLIDES):
         SLIDES[pageno].display()
+        print_slide_number(pageno, len(SLIDES))
 
         c = getch()
         if c == 'd':
