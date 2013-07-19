@@ -2,7 +2,8 @@
 Read me
 =======
 
-Tedmund is a terminal-based slide presentation system.
+Tedmund is a really really basic terminal-based slide presentation
+system.
 
 You build slides with it, then run it as a Python script to do your
 presentation. It comes with some formatting helpers to make slides
@@ -20,17 +21,60 @@ Write slides::
 
     $ vim mypresentation.py
 
-    from temund import run_slides
+    from temund import *
 
-    slides = [
 
-    ]
+    title("""
+    Welcome to my slides
+    """)
 
-    run_slides(slides)
-    
+
+    info("""
+    My slides come in three varieties:
+
+    * title
+    * info
+    * code
+    """)
+
+
+    info("""
+    Example.
+    """)
+
+
+    code("""
+    from tedmund import *
+
+    title('''
+    Title slide!
+    ''')
+    info('''
+    This is an info slide with bullets!
+
+    * bullet 1
+    * bullet 2
+    ''')
+    code('''
+    from tedmund import *
+    ...
+    ''')
+    """)
+
+
+    run_slides()
+
 Present::
 
     $ python mypresentation.py
+
+Use:
+
+* 'a' for previous slide,
+* 'd' for next slide,
+* and 'q' for quit.
+
+Why those keys? Because I do a lot of WASD games.
 
 
 Project details

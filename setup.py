@@ -12,7 +12,7 @@ import os
 
 
 READMEFILE = 'README.rst'
-VERSIONFILE = os.path.join('tedmund', '__init__.py')
+VERSIONFILE = os.path.join('tedmund', '_version.py')
 VSRE = r"""^__version__ = ['"]([^'"]*)['"]"""
 
 
