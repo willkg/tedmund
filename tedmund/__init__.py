@@ -123,7 +123,7 @@ def print_slide_number(pageno, total):
         elif pageno + 1 == total:
             print '     THE END'
         else:
-            print '     {0:2} / {1:2}'.format(pageno + 1, total)
+            print '     {0:<2} / {1:<2}'.format(pageno + 1, total)
 
 
 def run_slides():
@@ -134,15 +134,15 @@ def run_slides():
     SLIDES[pageno].display()
     print_slide_number(pageno, len(SLIDES))
 
-    while 0 <= pageno < len(SLIDES):
+    while True:
         SLIDES[pageno].display()
         print_slide_number(pageno, len(SLIDES))
 
         c = getch()
         if c == 'd':
-            pageno += 1
+            pageno = min(len(SLIDES) - 1, pageno + 1)
         elif c == 'a':
-            pageno -= 1
+            pageno = max(0, pageno - 1)
         elif c == 'q':
             break
 
