@@ -7,7 +7,14 @@ from blessings import Terminal
 from tedmund._version import __version__, __releasedate__
 
 
-__all__ = ['title', 'info', 'code', 'run_slides', '__version__', '__releasedate__']
+__all__ = [
+    '__releasedate__'
+    '__version__',
+    'code',
+    'info',
+    'run_slides',
+    'title',
+]
 
 
 TERM = Terminal()
@@ -15,6 +22,7 @@ SLIDES = []
 
 
 class Title(object):
+    """Title slide"""
     def __init__(self, text):
         self.text = text.strip()
 
@@ -40,6 +48,7 @@ class Title(object):
 
 
 class Info(object):
+    """Info slide with bullet points"""
     def __init__(self, text):
         self.text = text.strip()
 
@@ -65,6 +74,7 @@ class Info(object):
 
 
 class Code(object):
+    """Code block slide"""
     def __init__(self, text):
         self.text = text.strip()
 
@@ -92,14 +102,17 @@ def add_slide(slide):
 
 
 def title(text):
+    """Creates a title slide"""
     add_slide(Title(text))
 
 
 def info(text):
+    """Creates an info slide"""
     add_slide(Info(text))
 
 
 def code(text):
+    """Creates a code slide"""
     add_slide(Code(text))
 
 
@@ -126,7 +139,8 @@ def print_slide_number(pageno, total):
             print '     {0:<2} / {1:<2}'.format(pageno + 1, total)
 
 
-def run_slides():
+def run_slides(go_back='a', go_forward='d', go_exit='q'):
+    """Enters fullscreen, runs through slides, exits fullscreen"""
     print TERM.enter_fullscreen()
 
     pageno = 0
@@ -139,11 +153,11 @@ def run_slides():
         print_slide_number(pageno, len(SLIDES))
 
         c = getch()
-        if c == 'd':
+        if c == go_forward:
             pageno = min(len(SLIDES) - 1, pageno + 1)
-        elif c == 'a':
+        elif c == go_back:
             pageno = max(0, pageno - 1)
-        elif c == 'q':
+        elif c == go_exit:
             break
 
     print TERM.clear()

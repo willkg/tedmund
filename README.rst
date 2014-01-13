@@ -66,7 +66,7 @@ Quick start
         """)
 
 
-    run_slides()
+        run_slides()
 
 **Present**
 
@@ -81,6 +81,11 @@ Quick start
     * and 'q' for quit.
 
     Why those keys? Because I do a lot of WASD games.
+
+    Dislike those keys? Then pass in the keys you want via arguments
+    to ``run_slides``::
+
+        run_slides(go_back='b', go_forward='f', go_exit='x')
 
 
 Project details
@@ -100,6 +105,8 @@ This is how I name my software projects.
 Status
 ======
 
-July 19th, 2013
+January 13th, 2014
+    Minor tweaks.
 
-Initial writing for a beer-and-tell.
+July 19th, 2013
+    Initial writing for a beer-and-tell.
