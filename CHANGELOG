@@ -6,7 +6,18 @@ What's new in tedmund
    :local:
 
 
-Version 0.1: In development
+Version 0.2.0: In development
+=============================
+
+**Changes**
+
+* Updated to Python 3
+* Changed license to MPLv2
+* Switched to semver
+* Reformatted code
+
+
+Version 0.1: (never released)
 =============================
 
 **API-breaking changes:**
