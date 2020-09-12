@@ -1,50 +1,48 @@
-#######################################################################
-# This file is part of tedmund.
-#
-# Copyright (C) 2013 Will Kahn-Greene
-# Licensed under the Simplified BSD License. See LICENSE for full
-# license.
-#######################################################################
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-from setuptools import setup, find_packages
-import re
 import os
+import re
+from setuptools import setup, find_packages
 
 
-READMEFILE = 'README.rst'
-VERSIONFILE = os.path.join('tedmund', '_version.py')
+READMEFILE = "README.rst"
+VERSIONFILE = os.path.join("tedmund", "_version.py")
 VSRE = r"""^__version__ = ['"]([^'"]*)['"]"""
 
 
 def get_version():
-    version_file = open(VERSIONFILE, 'rt').read()
+    version_file = open(VERSIONFILE, "rt").read()
     return re.search(VSRE, version_file, re.M).group(1)
 
 
 setup(
-    name='tedmund',
+    name="tedmund",
     version=get_version(),
-    description='terminal-based presentation software',
+    description="terminal-based presentation software",
     long_description=open(READMEFILE).read(),
-    license='Simplified BSD License',
-    author='Will Kahn-Greene',
-    author_email='willg@bluesock.org',
-    url='http://github.com/willkg/tedmund',
+    license="Mozilla Public License v2",
+    author="Will Kahn-Greene",
+    author_email="willkg@bluesock.org",
+    url="https://github.com/willkg/tedmund",
     zip_safe=True,
     packages=find_packages(),
     include_package_data=True,
     install_requires=[
-        'blessings',
+        "blessings",
     ],
     classifiers=[
-        'Development Status :: 3 - Alpha',
-        'Environment :: Console',
-        'License :: OSI Approved :: BSD License',
-        'Operating System :: POSIX',
-        'Operating System :: POSIX :: Linux',
-        'Operating System :: Unix',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        "Development Status :: 3 - Alpha",
+        "Environment :: Console",
+        "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+        "Operating System :: POSIX",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: Unix",
+        "Programming Language :: Python :: 3 :: Only",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: Implementation :: CPython",
     ],
 )
